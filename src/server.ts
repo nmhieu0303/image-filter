@@ -31,7 +31,7 @@ import { filterImageFromURL, deleteLocalFiles } from './util/util';
   /**************************************************************************** */
   // Get a signed url to put a new item in the bucket
   app.get('/filteredimage', async (req: Request, res: Response) => {
-    let { image_url } = req.query;
+    const image_url : string = req.query.image_url;
 
     if (!image_url) {
       return res.status(400).send({ message: 'image_url is required or invalid' });
